@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: datenshicommunity/yohane-bot-status:1.0.0
+    container_name: yohane-bot-status
+    environment:
+      - TOKEN=${DISCORD_TOKEN}
+      - CHANNEL_ID=${DISCORD_CHANNEL_ID}
+    restart: unless-stopped
