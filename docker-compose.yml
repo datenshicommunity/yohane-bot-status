@@ -8,6 +8,8 @@ services:
     image: datenshicommunity/yohane-bot-status:1.0.0
     container_name: yohane-bot-status
     environment:
-      - TOKEN=${DISCORD_TOKEN}
-      - CHANNEL_ID=${DISCORD_CHANNEL_ID}
+      TOKEN: "token_here"
+      CHANNEL_ID_0: "channel_id1"
+      CHANNEL_ID_1: "channel_id2"
+      API_URL: "http://api.yohane.love"
     restart: unless-stopped
