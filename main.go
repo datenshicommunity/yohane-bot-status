@@ -51,9 +51,11 @@ func main() {
 }
 
 func renameChannel(s *discordgo.Session, channelID string, gameID string, apiURL string) {
-	// Panggil fungsi terpisah untuk mendapatkan status game
-	updateChannelName(s, channelID, gameID, apiURL)
-	time.Sleep(5 * time.Minute)
+	for {
+		// Panggil fungsi terpisah untuk mendapatkan status game
+		updateChannelName(s, channelID, gameID, apiURL)
+		time.Sleep(5 * time.Minute)
+	}
 }
 
 func updateChannelName(s *discordgo.Session, channelID string, gameID string, apiURL string) {
